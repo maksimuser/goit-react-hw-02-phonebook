@@ -31,7 +31,7 @@ class ContactForm extends Component {
     const { name, number } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} autoComplete="off">
         <label htmlFor={this.nameId}>Name </label>
         <input
           type="text"
