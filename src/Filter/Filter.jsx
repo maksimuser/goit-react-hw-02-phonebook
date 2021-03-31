@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import styles from './Filter.module.scss';
 
 class Filter extends Component {
   filterId = uuidv4();
@@ -8,15 +9,19 @@ class Filter extends Component {
     const { filter, onChange } = this.props;
 
     return (
-      <>
-        <label htmlFor={this.filterId}>Find contacts by name </label>
+      <div className={styles.Filter}>
+        <label className={styles.Filter__label} htmlFor={this.filterId}>
+          Find contacts by name{' '}
+        </label>
         <input
+          className={styles.Filter__input}
           type="text"
           value={filter}
           id={this.filterId}
           onChange={onChange}
+          placeholder="Type name contact"
         />
-      </>
+      </div>
     );
   }
 }

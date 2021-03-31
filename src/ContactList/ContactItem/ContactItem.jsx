@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import styles from './ContactItem.module.scss';
 class ContactItem extends Component {
   render() {
     const { name, number, onDeleteItem } = this.props;
 
     return (
-      <li>
-        {name}: {number}
-        <button onClick={onDeleteItem} type="button">
+      <li className={styles.ContactItem}>
+        <span className={styles.ContactItem__text}>
+          {name}: {number}
+        </span>
+        <button
+          className={styles.ContactItem__btn}
+          onClick={onDeleteItem}
+          type="button"
+        >
           Delete
         </button>
       </li>

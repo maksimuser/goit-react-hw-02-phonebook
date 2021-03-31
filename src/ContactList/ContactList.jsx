@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import ContactItem from './ContactItem';
-
+import styles from './ContactList.module.scss';
 class ContactList extends Component {
   render() {
     const { onVisibleFilter, onDeleteContact } = this.props;
     return (
-      <ul>
+      <ul className={styles.ContactList}>
         {onVisibleFilter.map(({ id, name, number }) => {
           return (
             <ContactItem

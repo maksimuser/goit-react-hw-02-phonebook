@@ -64,16 +64,18 @@ class App extends Component {
     const visibleFilter = this.getVisibleContact();
 
     return (
-      <>
+      <div className="Container">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addNewContact} />
-        <h2>Contacts</h2>
-        <Filter filter={filter} onChange={this.changeFilter} />
-        <ContactList
-          onVisibleFilter={visibleFilter}
-          onDeleteContact={this.deleteContact}
-        />
-      </>
+        <div className="Contacts">
+          <h2>Contacts</h2>
+          <Filter filter={filter} onChange={this.changeFilter} />
+          <ContactList
+            onVisibleFilter={visibleFilter}
+            onDeleteContact={this.deleteContact}
+          />
+        </div>
+      </div>
     );
   }
 }
