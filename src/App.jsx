@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
+import ContactForm from './components/ContactForm';
+import Filter from './components/Filter';
+import ContactList from './components/ContactList';
 
 class App extends Component {
   state = {
@@ -19,7 +19,10 @@ class App extends Component {
 
   findName = name => {
     const { contacts } = this.state;
-    return contacts.find(contact => contact.name === name);
+    const normalizedName = name.toLowerCase();
+    return contacts.find(
+      contact => contact.name.toLowerCase() === normalizedName,
+    );
   };
 
   addNewContact = ({ name, number }) => {

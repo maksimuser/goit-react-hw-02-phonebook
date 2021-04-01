@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './ContactItem.module.scss';
 class ContactItem extends Component {
   render() {
-    const { name, number, onDeleteItem } = this.props;
+    const { name, number, onDeleteItem, id } = this.props;
+    const handleDelete = () => onDeleteItem(id);
 
     return (
       <li className={styles.ContactItem}>
@@ -12,7 +13,7 @@ class ContactItem extends Component {
         </span>
         <button
           className={styles.ContactItem__btn}
-          onClick={onDeleteItem}
+          onClick={handleDelete}
           type="button"
         >
           Delete

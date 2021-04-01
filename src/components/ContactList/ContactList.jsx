@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ContactItem from './ContactItem';
+import ContactItem from '../ContactItem';
 import styles from './ContactList.module.scss';
 class ContactList extends Component {
   render() {
@@ -12,9 +12,10 @@ class ContactList extends Component {
           return (
             <ContactItem
               key={id}
+              id={id}
               name={name}
               number={number}
-              onDeleteItem={() => onDeleteContact(id)}
+              onDeleteItem={onDeleteContact}
             />
           );
         })}
